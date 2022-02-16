@@ -23,12 +23,78 @@
     <section class="main-container pt-5">
         <div class="container">
             <p class="heading-title font-danger text-center">Goriber Swiss Bank</p>
+
+            <div class="row my-lg-5 gy-4 py-3">
+                <div class="col-12 col-lg-7 col-md-7">
+                    <div class="card rounded-3 shadow-lg p-2">
+                        <img class="img-fluid rounded-3" src="Assets/Picture.jpg" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4 col-md-4">
+                    <div class="card rounded-3 shadow-lg">
+                        <div class="card-body">
+                            <div class="basic-form">
+
+                                <h5 class="text-center mt-3">Income</h5>
+                                <div class="form-group">
+                                    <label>Income</label>
+                                    <input type="text" class="form-control" placeholder="Income">
+                                </div>
+
+                                <div class="form-group">
+                                    <h5 class="text-center mt-3">Expenses</h5>
+                                    <label>Food</label>
+                                    <input type="text" class="form-control" placeholder="Food">
+                                </div>
+                                <div class="form-group">
+                                    <label>Rent</label>
+                                    <input type="text" class="form-control" placeholder="Rent">
+                                </div>
+                                <div class="form-group">
+                                    <label>Cloths</label>
+                                    <input type="text" class="form-control" placeholder="Cloths">
+                                </div>
+
+                                <div class="form-button text-center">
+                                    <button type="submit"
+                                        class="btn btn-dark text-center my-3 mx-auto w-100">Calculate</button>
+                                </div>
+
+                                <div class="data text-center my-3" style="display: none;">
+                                    <hr>
+                                    <p class="h4">Total Expenses: <span id="total-expenses-place"></span></p>
+                                    <p class="h4">Balance: <span id="balance-place"></span></p>
+                                </div>
+
+                                <div class="percent-calculate">
+                                    <div class="row justify-content-around align-items-center">
+                                        <div class="col-12 col-lg-3 col-md-3">
+                                            <span>Save: </span>
+                                        </div>
+                                        <div class="col-12 col-lg-5 col-md-5">
+                                            <input type="text" class="form-control" id="discount-percent"
+                                                placeholder="X%">
+                                        </div>
+                                        <div class="col-12 col-lg-1 col-md-1">%</div>
+                                        <div class="col-12 col-lg-3 col-md-3">
+                                            <button class="btn btn-dark w-100" id="save-button">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="saving-money-data text-center mt-3 " style="display: none;">
+                                    <hr>
+                                    <p class="h4">Saving amount: <span id="saving-amount-place"></span></p>
+                                    <p class="h4">Remaining Balance: <span id="remaining-amount-place"></span></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="row">
-            <div class="col-12 col-lg-6 col-md-6"></div>
-            <div class="col-12 col-lg-6 col-md-6"></div>
-        </div>
+
     </section>
 
 
