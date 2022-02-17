@@ -33,16 +33,9 @@ function getValueFromID(id_name) {
     let value = document.getElementById(id_name).value;
     if (value != "") {
         if (!isNaN(value)) {
-            if (value > 0) {
-                setError(id_name, " ")
-                flag++
-                return parseFloat(value);
-            } else {
-                flag = 0;
-                saving_money_data.style.display = 'none'
-                statsFieldWrapper.style.display = 'none'
-                setError(id_name, "*Negetive value is not allowed")
-            }
+            setError(id_name, " ")
+            flag++
+            return parseFloat(value);
         } else {
             flag = 0;
             saving_money_data.style.display = 'none'
@@ -75,24 +68,35 @@ function calculateButton() {
     let rentFieldValue = getValueFromID('rent-input', statsFieldWrapper);
     let clothsFieldValue = getValueFromID('cloths-input', statsFieldWrapper);
 
-    let totalExpenses = calculateValues(foodFieldValue, rentFieldValue, clothsFieldValue);
-    if (incomeFieldValue < totalExpenses) {
+    debugger
+
+    if (incomeFieldValue < 0 || foodFieldValue < 0 || rentFieldValue < 0 || clothsFieldValue < 0) {
+        flag = 0;
         saving_money_data.style.display = 'none'
         statsFieldWrapper.style.display = 'none'
-        setError("calculate-button", "*Income Is less than your Expenses")
+        setError("calculate-button", "*Negetive value is not allowed")
     } else {
+        let totalExpenses = calculateValues(foodFieldValue, rentFieldValue, clothsFieldValue);
+        if (incomeFieldValue < totalExpenses) {
+            saving_money_data.style.display = 'none'
+            statsFieldWrapper.style.display = 'none'
+            setError("calculate-button", "*Income Is less than your Expenses")
+        } else {
 
-        balance = incomeFieldValue - totalExpenses
-        totalExpansesShowField.innerText = totalExpenses;
-        blanceShowField.innerText = balance;
-        if (flag != 0) {
-            resetError()
-            statsFieldWrapper.style.display = 'block'
+            balance = incomeFieldValue - totalExpenses
+            totalExpansesShowField.innerText = totalExpenses;
+            blanceShowField.innerText = balance;
+            if (flag != 0) {
+                resetError()
+                statsFieldWrapper.style.display = 'block'
+            }
         }
-    }
-    values = [totalExpenses, balance, incomeFieldValue]
+        values = [totalExpenses, balance, incomeFieldValue]
 
-    return values;
+        return values;
+    }
+
+
 
 }
 // calculatePercentage
@@ -119,9 +123,17 @@ function calculatePercentage(percent) {
 function saveButton() {
 
     let savingPercentageValue = getValueFromID('discount-percent-input');
-    if (flag != 0) {
-        calculatePercentage(savingPercentageValue)
+
+    if (savingPercentageValue < 0) {
+        saving_money_data.style.display = 'none'
+        statsFieldWrapper.style.display = 'none'
+        setError("discount-percent-input", "*Negetive Number is not allowed ")
+    } else {
+        if (flag != 0) {
+            calculatePercentage(savingPercentageValue)
+        }
     }
+
 
 
 }
