@@ -1,10 +1,21 @@
+/* Global Css */
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+
+/* For Heading  */
 .heading-title{
     font-size: 3rem;
     font-weight: 800;
+}
+
+/* For error message */
+.Error{
+    color: red;
+    font-size: small;
+    font-weight: 600;
 }

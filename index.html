@@ -34,38 +34,47 @@
                     <div class="card rounded-3 shadow-lg">
                         <div class="card-body">
                             <div class="basic-form">
-
+                                <!-- All input in upper section -->
                                 <h5 class="text-center mt-3">Income</h5>
                                 <div class="form-group">
                                     <label>Income</label>
                                     <input type="text" class="form-control" placeholder="Income" id="income-input">
+                                    <span class="Error"></span>
+
+
                                 </div>
 
                                 <div class="form-group">
                                     <h5 class="text-center mt-3">Expenses</h5>
                                     <label>Food</label>
                                     <input type="text" class="form-control" placeholder="Food" id="food-input">
+                                    <span class="Error"></span>
+
                                 </div>
                                 <div class="form-group">
                                     <label>Rent</label>
                                     <input type="text" class="form-control" placeholder="Rent" id="rent-input">
+                                    <span class="Error"></span>
                                 </div>
                                 <div class="form-group">
                                     <label>Cloths</label>
                                     <input type="text" class="form-control" placeholder="Cloths" id="cloths-input">
-
+                                    <span class="Error"></span>
                                 </div>
-
+                                <!-- Calculate Button -->
                                 <div class="form-button text-center">
+                                    <span class="Error text-center mt-2"></span>
                                     <button onclick="calculateButton()" type="submit"
-                                        class="btn btn-dark text-center my-3 mx-auto w-100">Calculate
+                                        class="btn btn-dark text-center my-3 mx-auto w-100"
+                                        id="calculate-button">Calculate
                                         Now</button>
-                                </div>
 
+                                </div>
+                                <!-- All Data  -->
                                 <div class="data text-center my-3" style="display: none;">
                                     <hr>
-                                    <p class="h4">Total Expenses: <span id="total-expenses-place"></span></p>
-                                    <p class="h4">Balance: <span id="balance-place"></span></p>
+                                    <p class="h4">Total Expenses: <span id="total-expenses-place">0</span></p>
+                                    <p class="h4">Balance: <span id="balance-place">0</span></p>
                                 </div>
 
                                 <div class="percent-calculate">
@@ -77,15 +86,18 @@
                                             <input type="text" class="form-control text-center"
                                                 id="discount-percent-input"
                                                 placeholder="Input your saving percent in number only">
+                                            <span class="Error text-center"></span>
                                         </div>
                                         <div class="col-12 col-lg-1 col-md-12 text-center">%</div>
                                         <div class="col-12 col-lg-3 col-md-12">
                                             <button onclick="
                                                 saveButton()" class="btn btn-dark w-100" id="save-button">Save</button>
                                         </div>
+
                                     </div>
                                 </div>
 
+                                <!-- Savings Data  -->
                                 <div class="saving-money-data text-center mt-3 " style="display: none;">
                                     <hr>
                                     <p class="h4">Saving amount: <span id="saving-amount-place"></span></p>
@@ -100,17 +112,6 @@
 
 
     </section>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
